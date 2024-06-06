@@ -1,11 +1,9 @@
 import React from 'react'
-import IndexPages from './DetailsPages/IndexPages'
-
 
 const page = () => {
   return (
     <div>
-    <IndexPages/>
+        contacthfrd
       
     </div>
   )
