@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Head from 'next/head';
+import Naavbar from './Components/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +22,12 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="https://admin.desh365.top/public/storage/post-image/4619_1716795170.webp" />
         <meta property="og:url" content="https://news-portal-nextjs-delta.vercel.app" />
       </Head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='container mx-auto px-4'>
+        <Naavbar/>
+        {children}
+        </div>
+        </body>
     </html>
-  );
+  )
 }

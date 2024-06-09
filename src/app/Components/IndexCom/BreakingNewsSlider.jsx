@@ -36,9 +36,9 @@ const BreakingNewsSlider = () => {
 
     const memoizedPosts = useMemo(() => {
         return posts.map(post => (
-            <Link href={`/details/${post?.id}`} key={post?.id}>
+            <Link href={`/posts/${post?.id}`} key={post?.id}>
                 <div className='' key={post?.id}>
-                    <div className="relative max-w-xl mx-auto">
+                    <div className="relative w-full ">
                         <img className="w-full h-[410px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/>
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 rounded-md"></div>
                         <div className="absolute inset-20 flex items-center mt-0 justify-center">
@@ -54,7 +54,8 @@ const BreakingNewsSlider = () => {
         <Carousel transition={{ duration: 1 }} className="rounded-xl">
             {memoizedPosts}
         </Carousel>
+       
     );
-};
+}
 
 export default BreakingNewsSlider;

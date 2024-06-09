@@ -8,7 +8,6 @@ const Naavbar = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-      // Replace 'your-api-endpoint' with your actual API endpoint
       fetch('https://admin.desh365.top/api/all-category')
           .then(response => response.json())
           .then(data => {
@@ -54,8 +53,8 @@ const Naavbar = () => {
   return (
     <div>
        
-      <div className="  w-[92%] mx-auto ">
-        <nav className=" flex text-gray-800 items-center justify-between flex-wrap pb-2 px-5">
+      <div className="  mx-auto ">
+        <nav className=" flex text-gray-800 items-center justify-between pb-2">
           <div>
             {/* <span className="font-semibold text-1xl text-gray-900">Mews </span> */}
            <Link href='/'> <img className='h-[80px] w-[70%] py-1 rounded-md' src="https://news-portal-gray.vercel.app/assets/news_logo-BtjqPS6t.png" alt="logo" /></Link>
@@ -76,7 +75,7 @@ const Naavbar = () => {
             }`}
             id="navbar"
           >
-            <div className="lg:flex-grow justify-center  text-xl text-center space-x-3">
+            <div className="lg:flex-grow justify-center text-[17px]  text-center space-x-3">
             <ul className="flex  md:flex-row flex-col md:items-center md:gap-5 gap-3">
                 {categories.map(category => (
                     
@@ -94,7 +93,7 @@ const Naavbar = () => {
         </nav>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Naavbar;

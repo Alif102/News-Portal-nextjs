@@ -1,10 +1,11 @@
 import React from 'react'
-import IndexPages from './DetailsPages/IndexPages'
+import IndexPages from './Pages/IndexPages'
 
 
 const page = () => {
   return (
     <div>
+ 
     <IndexPages/>
       
     </div>
