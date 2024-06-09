@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect } from 'react';
 import PostBody from './Shared/Postbody';
+import Link from 'next/link';
 
 const DetailPage = ({ post  }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post?.image}`;
@@ -20,6 +21,16 @@ const DetailPage = ({ post  }) => {
       
 
       <div  className='p-2 space-y-5' >
+      <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${(window.location.href)}`}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <button className='b bg-blue-600 p-2 text-white rounded-lg'>
+            Share on Facebook
+          </button>
+        </a>
+       
       
           <h1 className='f text-[22px]  font-bold'> {post?.title} </h1>
          
