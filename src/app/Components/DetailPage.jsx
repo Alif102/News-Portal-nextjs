@@ -1,10 +1,7 @@
+"use client"
 import Link from 'next/link';
 import React, { useEffect } from 'react';
-
-export const metadata = {
-  title: 'news detail',
-  description: 'detail page description',
-};
+import Head from 'next/head';
 
 const DetailPage = ({ post }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post?.image}`;
@@ -12,6 +9,7 @@ const DetailPage = ({ post }) => {
   useEffect(() => {
     // This effect runs only once on mount
     document.title = post?.title || 'news detail';
+    // document.description = post?.Category_name || 'news description';
   }, [post]);
 
   if (!post) {
@@ -20,6 +18,14 @@ const DetailPage = ({ post }) => {
 
   return (
     <div>
+      <Head>
+        <title>{post?.title}</title>
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:description" content={post?.Category_name} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={window.location.href} />
+      </Head>
+
       <div className='flex mx-auto gap-5 items-center mt-5 justify-center'>
         <div className='flex flex-col gap-5'>
           <h1>
