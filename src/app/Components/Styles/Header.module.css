@@ -1,0 +1,61 @@
+/*****************
+Header Component Styling
+******************/
+
+.menuClose {
+    display: none;
+  }
+  
+  .openSidebarMenu {
+    display: none;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Chomsky';
+    width: 100%;
+    max-width: 1200px;
+    height: 60px;
+    max-height: 60px;
+    padding: 0 3%;
+    font-size: 28px;
+    transition: font-size 300ms ease;
+  }
+  .link{
+    text-decoration: none;
+    color: black;
+  }
+  #span {
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked~.header>.sidebarIconToggle .menuClose {
+    display: block;
+  }
+  
+  input[type="checkbox"]:checked~.header>.sidebarIconToggle .menu {
+    display: none;
+  }
+  
+  /*****************
+  Media Queries
+  ******************/
+  @media (min-width: 500px) {
+    #span {
+      display: block;
+    }
+  }
+  
+  @media (min-width: 420px) {
+    .header {
+      font-size: 36px;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .header {
+      font-size: 42px;
+    }
+  }

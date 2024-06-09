@@ -58,6 +58,7 @@ export default function PostPage({ params }) {
             </div>
             <div className=' '>
               <NewsTabs/>
+            
             </div>
           </div>
           <RelatedData related={related} />
