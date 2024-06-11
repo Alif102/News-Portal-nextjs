@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import PostBody from './Shared/Postbody';
 import Image from 'next/image';
 import Head from 'next/head';
