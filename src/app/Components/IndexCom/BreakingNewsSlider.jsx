@@ -36,7 +36,7 @@ const BreakingNewsSlider = () => {
 
     const memoizedPosts = useMemo(() => {
         return posts.map(post => (
-            <Link href={`/posts/${post?.id}`} key={post?.id}>
+            <Link href={`Pages/post/${post?.id}`} key={post?.id}>
                 <div className='' key={post?.id}>
                     <div className="relative w-full ">
                         <img className="w-full h-[410px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/>
