@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useState, useMemo } from 'react';
 import { Carousel } from '@material-tailwind/react';
 import axios from 'axios';
