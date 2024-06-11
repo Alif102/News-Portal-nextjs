@@ -3,6 +3,7 @@ import React, { useEffect, useState, useMemo } from 'react';
 import { Carousel } from "@material-tailwind/react";
 import axios from 'axios';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BreakingNewsSlider = () => {
     const [posts, setPosts] = useState([]);
@@ -39,7 +40,17 @@ const BreakingNewsSlider = () => {
             <Link href={`Pages/post/${post?.id}`} key={post?.id}>
                 <div className='' key={post?.id}>
                     <div className="relative w-full ">
-                        <img className="w-full h-[410px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/>
+
+                    <div className='object-cover rounded-md' style={{ height: '410px', width: '150px'  }}>
+    <Image
+      src={`https://admin.desh365.top/public/storage/post-image/${post.image}`}
+      alt={post?.title || 'Default Alt Text'} 
+      layout="fill" 
+      objectFit="cover"
+    />
+  </div>
+
+                        {/* <img className="w-full h-[410px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/> */}
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 rounded-md"></div>
                         <div className="absolute inset-20 flex items-center mt-0 justify-center">
                             <h2 className="text-white md:text-xl text-sm font-bold">{post.title}</h2>

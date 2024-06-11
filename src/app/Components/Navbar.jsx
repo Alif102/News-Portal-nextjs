@@ -1,7 +1,8 @@
 "use client"
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
-
+import newslogo from '../../assets/newslogo.png'
 const Naavbar = () => {
   const [categories, setCategories] = useState([]);
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -53,7 +54,14 @@ const Naavbar = () => {
         <nav className="bg-gray-100 flex text-gray-800 items-center justify-between flex-wrap pb-2 px-5">
           <div>
             <Link href='/'>
-              <img className='h-[80px] w-[70%] py-1 rounded-md' src='https://news-portal-gray.vercel.app/assets/news_logo-BtjqPS6t.png' alt="logo" />
+            <div className='rounded-md py-1' style={{ height: '80px', width: '80%' }}>
+    <Image 
+      src={newslogo}
+      alt='logo' 
+      
+    />
+  </div>
+              {/* <img className='h-[80px] w-[70%] py-1 rounded-md' src='https://news-portal-gray.vercel.app/assets/news_logo-BtjqPS6t.png' alt="logo" /> */}
             </Link>
           </div>
           <div className="block lg:hidden">

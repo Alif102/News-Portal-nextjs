@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 const RelatedData = ({ related }) => {
@@ -20,13 +21,23 @@ const RelatedData = ({ related }) => {
                 <div key={post?.id} className='overflow-auto h-300px'>
                   <Link href={`/Pages/post/${post?.id}`} key={post?.id}>
                     <div className='flex gap-2 flex-col my-3'>
-                      <div>
+
+                    <div className='object-cover rounded-md' >
+    <Image
+      src={`https://admin.desh365.top/public/storage/post-image/${post.image}`}
+      alt={post?.title || 'Default Alt Text'} 
+      className='transition duration-300 ease-in-out hover:scale-90 '
+      objectFit="cover"
+      width={300} height={200}
+    />
+  </div>
+                      {/* <div>
                         <img
                           className='transition duration-300 ease-in-out hover:scale-90 w-[100%] h-[200px] rounded-md'
                           src={imageUrl}
                           alt={post.title}
                         />
-                      </div>
+                      </div> */}
                       <h2 className='text-[16px] font-semibold hover:underline justify-center items-center'>{post.title}</h2>
                     </div>
                   </Link>

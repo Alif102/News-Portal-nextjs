@@ -1,5 +1,6 @@
 "use client"
 import axios from 'axios';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState, useMemo } from 'react';
 
@@ -33,7 +34,12 @@ const AllPost = () => {
       return (
         <Link href={`Pages/post/${post?.id}`} key={post?.id}>
           <div className='flex gap-2 justify-center items-center hover:underline' key={post?.id}>
-            <img className='w-20' src={imageUrl} alt={post.title} />
+          <Image
+      src={`https://admin.desh365.top/public/storage/post-image/${post?.image}`}
+      alt={post?.title || 'Default Alt Text'} 
+      width={90} height={80}
+    />
+            {/* <img className='w-20' src={imageUrl} alt={post.title} /> */}
             <h2 className='text-[14px]'>{post.title}</h2>
           </div>
           <div className='border borber-b'></div>

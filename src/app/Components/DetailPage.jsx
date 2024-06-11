@@ -40,14 +40,14 @@ const DetailPage = ({ post  }) => {
          
        
         {/* <img className='h-[400px] w-full rounded-md' src={imageUrl} alt={post?.title} /> */}
-        <Image
-  src={imageUrl} 
-  alt={post?.title || 'Default Alt Text'} 
-  className='h-[400px] w-full rounded-md' 
-  width={800} 
-  height={400} 
-  layout="responsive" 
-/>
+        <div className='rounded-md overflow-hidden relative' style={{ height: '360px', width: '100%' }}>
+    <Image 
+      src={imageUrl} 
+      alt={post?.title || 'Default Alt Text'} 
+      layout="fill" 
+      objectFit="cover"
+    />
+  </div>
 
         <PostBody postBody={post?.post_body}/>
 
