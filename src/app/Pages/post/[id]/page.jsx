@@ -11,7 +11,6 @@ export default function PostPage({ params }) {
   const [related, setRelated] = useState(null);
   const id = params.id;
 
-  // Function to fetch data either from local storage or API
   const fetchData = async (id) => {
     try {
       const cachedData = localStorage.getItem(`post_${id}`);
@@ -25,7 +24,6 @@ export default function PostPage({ params }) {
         const relatedData = response.data.related_post;
         setPost(postData);
         setRelated(relatedData);
-        // Store data in local storage
         localStorage.setItem(`post_${id}`, JSON.stringify({ post: postData, related: relatedData }));
       }
     } catch (error) {
@@ -33,7 +31,6 @@ export default function PostPage({ params }) {
     }
   };
 
-  // Memoize the fetchData function to prevent unnecessary re-renders
   const memoizedFetchData = useMemo(() => fetchData, []);
 
   useEffect(() => {

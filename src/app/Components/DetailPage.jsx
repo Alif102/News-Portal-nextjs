@@ -19,18 +19,27 @@ const currentUrl = 'https://newsportalnextjs.vercel.app'
   if (!post) {
     return <div>Loading...</div>;
   }
+  console.log(post)
   
 
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>{post?.title}</title>
         <meta property="og:title" content={post?.title} />
         <meta property="og:description" content={post?.Category_name} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={currentUrl} />
-      </Head>
-      
+      </Head> */}
+      <Head>
+    <title>titleeeeee</title>
+    <meta property="og:title" content='page details' />
+    {/* <meta property="og:description" content={post?.Category_name} /> */}
+    <meta property="og:image" content='https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp' />
+    <meta property="og:url" content='https://newsportalnextjs.vercel.app/Pages/post/16' />
+    <meta property="og:type" content="article" />
+    // Add additional og tags as necessary
+</Head>
 
       <div  className='p-2 space-y-5' >
       <a

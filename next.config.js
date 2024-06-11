@@ -1,5 +1,6 @@
 module.exports = {
   images: {
+    domains: ['admin.desh365.top' ,  'https://newsportalnextjs.vercel.app'], 
     remotePatterns: [
       {
         protocol: 'https',
@@ -7,6 +8,7 @@ module.exports = {
         port: '',
         pathname: '/public/storage/post-image/**',
       },
+
     ],
   },
 };
