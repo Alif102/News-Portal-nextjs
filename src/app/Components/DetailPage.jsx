@@ -4,48 +4,48 @@ import Image from 'next/image';
 import Head from 'next/head';
 
 const DetailPage = ({ post }) => {
-  const imageUrl = post
-    ? `https://admin.desh365.top/public/storage/post-image/${post.image}`
-    : '';
-
-  // Perform URL-related operations only if we have a valid post.
-  let currentUrl = '';
-  let shareUrl = '';
-  if (typeof window !== 'undefined' && post) {
-    currentUrl = window.location.href;
-    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-      currentUrl,
-    )}`;
-  }
-
-  useEffect(() => {
-    if (post && post.title) {
-      document.title = post.title;
-    }
-  }, [post]);
-
   if (!post) {
     return <div>Loading...</div>;
   }
 
+  console.log('post', post);
+
+  // The base URL should be the domain where your application is hosted
+  const baseUrl = 'https://newsportalnextjs.vercel.app';
+  const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
+  const currentUrl = post && `${baseUrl}/posts/${post.id}`;
+
   return (
     <div>
       <Head>
+        {/* Title specific to this post's content */}
         <title>{post.title}</title>
+
+        {/* Open Graph tags */}
         <meta property='og:title' content={post.title} />
         <meta property='og:description' content={post.Category_name} />
+        {/* Ensure the image URL is absolute */}
         <meta property='og:image' content={imageUrl} />
+        {/* The URL should point to the page where the content is hosted */}
         <meta property='og:url' content={currentUrl} />
         <meta property='og:type' content='article' />
+
+        {/* Additional tags like Twitter Card data could also be included */}
       </Head>
+
       <div className='p-2 space-y-5'>
-        <a href={shareUrl} target='_blank' rel='noopener noreferrer'>
-          <button className='bg-blue-600 p-2 text-white rounded-lg'>
-            Share on Facebook
-          </button>
+        {/* No need to use JavaScript to open share dialog, just use anchor tag directly */}
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            currentUrl,
+          )}`}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='bg-blue-600 p-2 text-white rounded-lg'>
+          Share on Facebook
         </a>
 
-        <h1 className='text-[22px] font-bold'> {post.title} </h1>
+        <h1 className='text-[22px] font-bold'>{post.title}</h1>
 
         <div
           className='rounded-md overflow-hidden relative'
