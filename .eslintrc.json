@@ -1,9 +1,13 @@
+// .eslintrc.json
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
-    "react/no-unescaped-entities": "off",
-    "@next/next/no-page-custom-font": "off",
-    "rule-name": "off",
-    "another-rule-name": "warn"
+    "react/display-name": "off" // Or set to "warn" or "error" based on your preference
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
