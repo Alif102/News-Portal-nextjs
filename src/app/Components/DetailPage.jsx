@@ -8,11 +8,11 @@ import Head from 'next/head';
 
 
 
-const DetailPage = ({ post  }) => {
+const DetailPage = ({ post }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post?.image}`;
-const currentUrl = 'https://newsportalnextjs.vercel.app'
+  const currentUrl = 'https://newsportalnextjs.vercel.app'
   useEffect(() => {
-  
+
     document.title = post?.title || 'news detail';
   }, [post]);
 
@@ -20,29 +20,22 @@ const currentUrl = 'https://newsportalnextjs.vercel.app'
     return <div>Loading...</div>;
   }
   console.log(post)
-  
+
 
   return (
     <div>
-      {/* <Head>
-        <title>{post?.title}</title>
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:description" content={post?.Category_name} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={currentUrl} />
-      </Head> */}
+     
       <Head>
-    <title>titleeeeee</title>
-    <meta property="og:title" content={'page details'}/>
-    {/* <meta property="og:description" content={post?.Category_name} /> */}
-    <meta property="og:image" content={'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp'} />
-    <meta property="og:url" content={'https://newsportalnextjs.vercel.app/Pages/post/16'} />
-    <meta property="og:type" content="article" />
-    // Add additional og tags as necessary
-</Head>
+        <title>titleeeeee</title>
+        <meta property="og:title" content={'page details'} />
+        <meta property="og:image" content={'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp'} />
+        <meta property="og:url" content={'https://newsportalnextjs.vercel.app/Pages/post/16'} />
+        <meta property="og:type" content="article" />
+   
+      </Head>
 
-      <div  className='p-2 space-y-5' >
-      <a
+      <div className='p-2 space-y-5' >
+        <a
           href={`https://www.facebook.com/sharer/sharer.php?u=${(currentUrl)}`}
           target='_blank'
           rel='noopener noreferrer'
@@ -51,27 +44,27 @@ const currentUrl = 'https://newsportalnextjs.vercel.app'
             Share on Facebook
           </button>
         </a>
-       
-      
-          <h1 className='f text-[22px]  font-bold'> {post?.title} </h1>
-         
-       
+
+
+        <h1 className='f text-[22px]  font-bold'> {post?.title} </h1>
+
+
         {/* <img className='h-[400px] w-full rounded-md' src={imageUrl} alt={post?.title} /> */}
         <div className='rounded-md overflow-hidden relative' style={{ height: '360px', width: '100%' }}>
-    <Image 
-      src={imageUrl} 
-      alt={post?.title || 'Default Alt Text'} 
-      layout="fill" 
-      objectFit="cover"
-    />
-  </div>
+          <Image
+            src={imageUrl}
+            alt={post?.title || 'Default Alt Text'}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
 
-        <PostBody postBody={post?.post_body}/>
+        <PostBody postBody={post?.post_body} />
 
       </div>
 
 
-      
+
 
     </div>
   )
