@@ -1,98 +1,69 @@
-'use client';
 import React, { useEffect } from 'react';
 import PostBody from './Shared/Postbody';
 import Image from 'next/image';
 import Head from 'next/head';
-// import Link from 'next/link';
-
-export const metadata = {
-  title: 'detailllll',
-  description: 'descriiiiptionnn',
-};
 
 const DetailPage = ({ post }) => {
-  const router = useRouter();
-  const currentUrl = `https://newsportalnextjs.vercel.app${router.asPath}`;
-  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    currentUrl,
-  )}`;
+  const imageUrl = post
+    ? `https://admin.desh365.top/public/storage/post-image/${post.image}`
+    : '';
+
+  // Perform URL-related operations only if we have a valid post.
+  let currentUrl = '';
+  let shareUrl = '';
+  if (typeof window !== 'undefined' && post) {
+    currentUrl = window.location.href;
+    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+      currentUrl,
+    )}`;
+  }
+
   useEffect(() => {
-    document.title = post?.title || 'news detail';
+    if (post && post.title) {
+      document.title = post.title;
+    }
   }, [post]);
 
   if (!post) {
     return <div>Loading...</div>;
   }
-  console.log(post);
 
   return (
     <div>
       <Head>
-        <title>titleeeeee</title>
-        <meta property='og:title' content='page details' />
-        <meta
-          property='og:image'
-          content='https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp'
-        />
-        <meta
-          property='og:url'
-          content='https://newsportalnextjs.vercel.app/Pages/post/16'
-        />
+        <title>{post.title}</title>
+        <meta property='og:title' content={post.title} />
+        <meta property='og:description' content={post.Category_name} />
+        <meta property='og:image' content={imageUrl} />
+        <meta property='og:url' content={currentUrl} />
         <meta property='og:type' content='article' />
       </Head>
-
       <div className='p-2 space-y-5'>
         <a href={shareUrl} target='_blank' rel='noopener noreferrer'>
-          <button className='b bg-blue-600 p-2 text-white rounded-lg'>
+          <button className='bg-blue-600 p-2 text-white rounded-lg'>
             Share on Facebook
           </button>
         </a>
 
-        <h1 className='f text-[22px]  font-bold'> {post?.title} </h1>
+        <h1 className='text-[22px] font-bold'> {post.title} </h1>
 
-        {/* <img className='h-[400px] w-full rounded-md' src={imageUrl} alt={post?.title} /> */}
         <div
           className='rounded-md overflow-hidden relative'
           style={{ height: '360px', width: '100%' }}>
-          <Image
-            src={imageUrl}
-            alt={post?.title || 'Default Alt Text'}
-            layout='fill'
-            objectFit='cover'
-          />
+          {post.image && (
+            <Image
+              src={imageUrl}
+              alt={post.title || 'Default Alt Text'}
+              layout='fill'
+              objectFit='cover'
+            />
+          )}
         </div>
 
-        <PostBody postBody={post?.post_body} />
+        <PostBody postBody={post.post_body} />
       </div>
     </div>
   );
 };
 
 export default DetailPage;
-
-{
-  /* <Head>
-        <title>{post?.title}</title>
-        <meta property="og:title" content={post?.title} />
-        <meta property="og:description" content={post?.Category_name} />
-        <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={window.location.href} />
-      </Head> */
-}
-{
-  /* 
-      <div className='flex flex-row gap-5 justify-center mt-7'>
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <button className='b bg-blue-600 p-2 text-white rounded-lg'>
-            Share on Facebook
-          </button>
-        </a>
-        <Link href='/'>
-          <button className='b bg-purple-300 p-2 rounded-lg'>Go Home</button>
-        </Link>
-      </div> */
-}
