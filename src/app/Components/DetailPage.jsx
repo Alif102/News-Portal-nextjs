@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import PostBody from './Shared/Postbody';
 import Image from 'next/image';
+import Head from 'next/head';
 // import Link from 'next/link';
 
 
@@ -22,6 +23,13 @@ const DetailPage = ({ post  }) => {
 
   return (
     <div>
+      <Head>
+        <title>{post?.title}</title>
+        <meta property="og:title" content={post?.title} />
+        <meta property="og:description" content={post?.Category_name} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={window.location.href} />
+      </Head>
       
 
       <div  className='p-2 space-y-5' >

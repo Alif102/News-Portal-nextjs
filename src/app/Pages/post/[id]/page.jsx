@@ -4,7 +4,6 @@ import axios from 'axios';
 import DetailPage from '@/app/Components/DetailPage';
 import Add1 from '@/app/Components/IndexCom/Add1';
 import Add from '@/app/Components/IndexCom/Add';
-import NewsTabs from '@/app/Components/IndexCom/NewsTabs';
 import RelatedData from '@/app/Components/IndexCom/RelatedData';
 
 export default function PostPage({ params }) {
@@ -56,10 +55,7 @@ export default function PostPage({ params }) {
             <div className=' basis-[90%]'>
               <DetailPage post={post}/>
             </div>
-            <div className=' '>
-              <NewsTabs/>
-            
-            </div>
+           
           </div>
           <RelatedData related={related} />
         </div>
