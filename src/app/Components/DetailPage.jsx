@@ -33,10 +33,10 @@ const currentUrl = 'https://newsportalnextjs.vercel.app'
       </Head> */}
       <Head>
     <title>titleeeeee</title>
-    <meta property="og:title" content='page details' />
+    <meta property="og:title" content={'page details'}/>
     {/* <meta property="og:description" content={post?.Category_name} /> */}
-    <meta property="og:image" content='https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp' />
-    <meta property="og:url" content='https://newsportalnextjs.vercel.app/Pages/post/16' />
+    <meta property="og:image" content={'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp'} />
+    <meta property="og:url" content={'https://newsportalnextjs.vercel.app/Pages/post/16'} />
     <meta property="og:type" content="article" />
     // Add additional og tags as necessary
 </Head>
