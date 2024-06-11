@@ -5,7 +5,11 @@ import Image from 'next/image';
 import Head from 'next/head';
 // import Link from 'next/link';
 
-
+export const metadata = {
+  title: 'detailllll',
+  description: 'descriiiiptionnn',
+  
+};
 
 
 const DetailPage = ({ post }) => {
@@ -27,9 +31,9 @@ const DetailPage = ({ post }) => {
      
       <Head>
         <title>titleeeeee</title>
-        <meta property="og:title" content={'page details'} />
-        <meta property="og:image" content={'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp'} />
-        <meta property="og:url" content={'https://newsportalnextjs.vercel.app/Pages/post/16'} />
+        <meta property="og:title" content='page details'/>
+        <meta property="og:image" content='https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp' />
+        <meta property="og:url" content='https://newsportalnextjs.vercel.app/Pages/post/16' />
         <meta property="og:type" content="article" />
    
       </Head>
