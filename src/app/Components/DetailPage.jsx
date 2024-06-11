@@ -10,7 +10,7 @@ import Head from 'next/head';
 
 const DetailPage = ({ post  }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post?.image}`;
-
+const currentUrl = 'https://newsportalnextjs.vercel.app'
   useEffect(() => {
   
     document.title = post?.title || 'news detail';
@@ -28,13 +28,13 @@ const DetailPage = ({ post  }) => {
         <meta property="og:title" content={post?.title} />
         <meta property="og:description" content={post?.Category_name} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={currentUrl} />
       </Head>
       
 
       <div  className='p-2 space-y-5' >
       <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${(window.location.href)}`}
+          href={`https://www.facebook.com/sharer/sharer.php?u=${(currentUrl)}`}
           target='_blank'
           rel='noopener noreferrer'
         >
