@@ -5,7 +5,7 @@ export async function generateMetadata({ params }) {
 
   // Fetch or calculate your dynamic metadata here
   let title = 'Default Title';
-  let description = 'Default description';
+  let description = 'Default descripton';
 
   try {
     const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
