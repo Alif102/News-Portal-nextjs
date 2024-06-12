@@ -39,8 +39,8 @@ export default function PostPage({ params }) {
 
   return (
     <div>
-      <div className='grid lg:grid-cols-12 grid-cols-1  gap-8'>
-        <div className='md:col-span-2 col-span-1 '>
+      <div className='grid lg:grid-cols-12 grid-cols-1 gap-8'>
+        <div className='md:col-span-2 col-span-1'>
           <div className='hidden md:block space-y-3'>
             <Add1/>
             <Add1/>
@@ -49,10 +49,9 @@ export default function PostPage({ params }) {
         <div className='md:col-span-10 col-span-1'>
           <Add/>
           <div className='flex justify-between gap-5 md:flex-col flex-col lg:flex-row'>
-            <div className=' basis-[90%]'>
+            <div className='basis-[90%]'>
               <DetailPage post={post}/>
             </div>
-           
           </div>
           <RelatedData related={related} />
         </div>

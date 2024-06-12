@@ -2,23 +2,23 @@
 import React, { useEffect } from 'react';
 import PostBody from './Shared/Postbody';
 import Image from 'next/image';
-import Head from 'next/head';
 // import Link from 'next/link';
 
-export const metadata = {
-  title: 'detailllll',
-  description: 'descriiiiptionnn',
-  
-};
 
+// export const metadata = {
+//   title: 'Blog',
+//   openGraph: {
+//     title: 'Blog',
+//   },
+// }
 
 const DetailPage = ({ post }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post?.image}`;
   const currentUrl = 'https://newsportalnextjs.vercel.app'
-  useEffect(() => {
+  // useEffect(() => {
 
-    document.title = post?.title || 'news detail';
-  }, [post]);
+  //   document.title = post?.title || 'news detail';
+  // }, [post]);
 
   if (!post) {
     return <div>Loading...</div>;
@@ -29,14 +29,15 @@ const DetailPage = ({ post }) => {
   return (
     <div>
      
-      <Head>
+     
+      {/* <Head>
         <title>titleeeeee</title>
         <meta property="og:title" content='page details'/>
         <meta property="og:image" content='https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp' />
         <meta property="og:url" content='https://newsportalnextjs.vercel.app/Pages/post/16' />
         <meta property="og:type" content="article" />
    
-      </Head>
+      </Head> */}
 
       <div className='p-2 space-y-5' >
         <a
